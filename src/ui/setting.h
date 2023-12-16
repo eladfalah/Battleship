@@ -1,1 +1,1 @@
-#define GREEN "32"
+#define GREEN "32m"
