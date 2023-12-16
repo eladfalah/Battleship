@@ -11,7 +11,7 @@ void printLineSection(int i, int j, char a, char b, char c){
 			
 }
 void buildgrid(){
-	for(int i=0;i<20;i+=2){
+	for(int i=0;i<22;i+=2){
 		for(int j=0;j<150;j+=3){
 		printLineSection(i, j,'+','-','-');
 		printLineSection(i+1, j, '|', ' ', ' ');
