@@ -1,46 +1,47 @@
+#include <asm-generic/errno-base.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <termios.h>
 #include <curses.h>
 #include <unistd.h>
 #include <ncurses.h>
 #include <sys/ioctl.h>
 #include "buildgrid.h"
-
-int count=0;
-
 struct winsize wsize;
-
-bool isRuning;
+bool isRunning;
+bool isUIchanged;
 int key;
+int main() {
+    isRunning = true;
+    initscr();
+    noecho();
+    curs_set(0); // hide cursor
+    isUIchanged = true;
+    keypad(stdscr, TRUE);
+    while (isRunning) {
+        if (isUIchanged) {
+            clear();
+            refresh();
+            buildgrid();
+            isUIchanged = false;
+        }
 
-int main(){
-isRuning=true;
-initscr();
-noecho();
-printf("\e[?25l");//hide cursor
-
-keypad(stdscr, TRUE);
-while (isRuning) {
-
-
-clear();
-
-
-refresh();
-buildgrid();
-key=getch();
-switch (key) {
-case KEY_DOWN:
-        
-
-case 'q':
-case 'Q':
-        isRuning=false;
+        key = getch();
+        switch (key) {
+            case KEY_DOWN:
                 break;
-}
-}
-endwin();
-printf("\e[?25h");//how cursor
 
-return 0;
+            case 'q':
+            case 'Q':
+                isRunning = false;
+                break;
+        }
+    }
+	clear();
+	erase();
+	refresh(); // Add a refresh call to ensure changes take effect
+	endwin();
+	return 0;
 }
+

@@ -20,4 +20,5 @@ void buildgrid(){
 		
 		
 	}
+fflush(stdout);
 }
