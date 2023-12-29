@@ -21,15 +21,7 @@ void buildgrid(){
 		for(j=0;j<=150;j+=3){
 		printLineSection(i, j, (j < 150) ? "+--E" : "+E");
 		if(i<28)printLineSection(i+1, j, (j < 150) ? "|  E" : "|E");
-		}
-		
-		//printLineSection(i, j,'+',' ',' ');
-		//printLineSection(i+1, j, '|', ' ', ' ');
-		
-//	}
-	//for(j=0;j<28;j++){
-	//	printLineSection(i+1, j,'+','-','-');
-		
-	}//
+		}	
+	}
 fflush(stdout);
 }
