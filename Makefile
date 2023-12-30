@@ -34,5 +34,5 @@ $(C_OBJ): $(C_SOURCE) $(ASSEMBLY_INCLUDE)
 
 # Clean up
 clean:
-	rm -f $(ASSEMBLY_OBJ) $(C_OBJ) $(EXECUTABLE)
+	rm -f $(ASSEMBLY_OBJ) $(C_OBJ) 	
 
