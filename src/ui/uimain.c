@@ -12,7 +12,7 @@ struct winsize wsize;
 bool isRunning;
 bool isUIchanged;
 int key;
-int main() {
+int ui() {
     isRunning = true;
     initscr();
     noecho();
