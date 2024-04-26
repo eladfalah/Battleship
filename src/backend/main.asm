@@ -4,7 +4,7 @@ section .data;
 inp_ship db "a","b","c"; user input ship from the ui ()
 section .bss;
 ships resb 80;ships array
-;inp_ship resb 3;
+;inp_ship resb 3; x pos (8 bits), y pos (8 bits), , 
 section .text;
 	global _start;
 	%macro _insert_ship 1;
@@ -26,4 +26,4 @@ section .text;
 	%endmacro;
 	_start:
 		call ui;
-		exit;
+		exi
