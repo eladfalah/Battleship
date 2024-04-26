@@ -26,4 +26,4 @@ section .text;
 	%endmacro;
 	_start:
 		call ui;
-		exi
+		exit
