@@ -4,10 +4,11 @@ section .data;
 inp_ship db "a","b","c"; user input ship from the ui ()
 section .bss;
 ships resb 80;ships array
-;inp_ship resb 3; x pos (8 bits), y pos (8 bits), , 
+;inp_ship resb 3; x pos (8 bits), y pos (8 bits), size (2 bits), isSinked (1 bit), hits points (5 bites); 
 section .text;
 	global _start;
 	%macro _insert_ship 1;
+
 	mov rax, %1; get position in the ships array
 	mov rcx, inp_ship; get iput ship addres
 	mov rbx, 3; 3 bytes > size of ship
