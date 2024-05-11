@@ -1,3 +1,10 @@
+;.global ROWS;
+;.global COLUMNS;
+section .data
+ROWS dd 0xA;
+COLUMNS dd 0x14;
+
+
 %macro exit 0
 	mov rax, 60;
 	mov rbx, 0;

@@ -6,6 +6,8 @@ section .bss;
 ships resb 80;ships array
 ;inp_ship resb 3; x pos (8 bits), y pos (8 bits), size (2 bits), isSinked (1 bit), hits points (5 bites); 
 section .text;
+	global ROWS;
+	global COLUMNS;
 	global _start;
 	%macro _insert_ship 1;
 

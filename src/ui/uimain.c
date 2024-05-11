@@ -1,4 +1,5 @@
 #include <asm-generic/errno-base.h>
+#include <signal.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,6 +12,8 @@
 struct winsize wsize;
 bool isRunning;
 bool isUIchanged;
+extern uint ROWS;
+extern uint COLUMNS;
 int key;
 int ui() {
     isRunning = true;
@@ -23,7 +26,7 @@ int ui() {
         if (isUIchanged) {
             clear();
             refresh();
-            buildgrid();
+            buildgrid(COLUMNS*3, ROWS*2);
             isUIchanged = false;
         }
 
