@@ -1,8 +1,8 @@
 ;.global ROWS;
 ;.global COLUMNS;
 section .data
-ROWS dd 0xA;
-COLUMNS dd 0x14;
+ROWS dd 0x14;
+COLUMNS dd 0x28;
 
 
 %macro exit 0
