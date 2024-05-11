@@ -1,3 +1,4 @@
+%include "insert_ship.inc"
 ;.global ROWS;
 ;.global COLUMNS;
 section .data
