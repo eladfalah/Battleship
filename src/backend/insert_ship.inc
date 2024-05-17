@@ -1,3 +1,5 @@
+extern ROWS;
+extern COLUMNS;
 %macro _insert_ship 2;
 
 	mov rax, %1; get position in the ships array
